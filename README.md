@@ -211,6 +211,46 @@ Finally, we multiplied three of these quantities together to get our derivative.
 Now, let’s show that this works, using the three simple functions we’ve defined so far: sigmoid, square, and leaky_relu.
 <img width="420" alt="nested_3_function_diagram" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/289d12c7-c0c3-4e38-b456-377dc189bcd4">
 
+### Functions with Multiple Inputs:
+<img width="638" alt="multiple_input_factory" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/fbcef0e1-7300-480f-9402-1481cda41d95">
+<img width="632" alt="multiple_input_derivative" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/3eda42ac-85ac-4cff-b6fa-450c92a606e1">
+
+
+### Functions with Multiple Vector Inputs:
+- In deep learning, we deal with functions whose inputs are vectors or matrices. 
+
+Example of Housing price:<br>
+- A typical way to represent a single data point, or “observation,” in a neural network is as a row with n features, where each feature is simply a number x1, x2, and so on, up to xn:
+   - $x = [x_1, x_2, x_3, ... , x_n]$
+   - x1, x2, and so on are numerical features of a house, such as its square footage or its proximity to schools.
+- Creating New Features from Existing Features:
+  - single most common operation in neural networks is to form a “weighted sum” of these features, where the weighted sum could emphasize certain features and de-emphasize others and thus be thought of as a new feature that itself is just a combination of old features.
+  - weight vector: $$w = \begin{bmatrix}w_1\\w_2\\.\\.\\w_n\end{bmatrix}$$
+  - Dot product of W and variable (X) vectors: $N = \upsilon (X, W)=X\times W =x_1\times w_1+x_2\times w_2+x_3\times w_3+...$
+
+<img width="698" alt="matrix_multiplication" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/d48aa8a2-cf3c-4487-9e28-52448a75fe48">
+
+```
+def matmul_forward(X: ndarray,
+                   W: ndarray) -> ndarray:
+    
+    #Computes the forward pass of a matrix multiplication.
+
+    assert X.shape[1] == W.shape[0], \
+    #```
+    #For matrix multiplication, the number of columns in the first array should
+    #match the number of rows in the second; instead the number of columns in the
+    #first array is {0} and the number of rows in the second array is {1}.
+    #'''.format(X.shape[1], W.shape[0])
+
+    # matrix multiplication
+    N = np.dot(X, W)
+
+    return N
+```
+
+### Derivatives of Functions with Multiple Vector Inputs:
+
 
 ## Topic 1: Fundamentals of Deep Learning
 

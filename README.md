@@ -8,7 +8,7 @@ I'm using this repo to consolidate all my learning about Deep learning
 ## 📇 Content:
 
 1. [Foundation](#item-one)
-  - [Functions](#item-b)
+2. [Fundaments](#item-b)
 3. Fundamentals
 4. Neural Networks
 5. Artifical NN
@@ -22,7 +22,6 @@ In this topic, I'm covering covering useful Math concepts. For every function & 
  - Mini-factories diagram
  - Code
 
-<a id="item-b"></a>
 ### Functions
 
 **Math**
@@ -297,7 +296,7 @@ def matrix_forward_extra(X: ndarray,
 
     return S
 ```
-
+<a id="item-b"></a>
 ## Topic 2: Fundamentals of Deep Learning
 
 ### Supervised Learning Overview:

@@ -13,12 +13,13 @@ I'm using this repo to consolidate all my learning about Deep learning
 
 ## Topic 1: Foundation (covering useful Math concepts)
 
-### Functions
-
-For every function, I will cover three parts as:
+For every function & Derivatives, I will cover three parts as:
  - Math formula
  - Diagram (x-y) plane
+ - Mini-factories diagram
  - Code
+
+### Functions
 
 **Math**
 Example:
@@ -26,6 +27,8 @@ Example:
 $f_1(x) = x^2;$ </br>
 $f_2(x) = max(x,0);$ </br>
 <img width="663" alt="square_ReLu" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/840c0999-9d31-47ef-9b37-deb9e4627a23">
+<img width="659" alt="square_ReLu_factory" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/42a326d6-bb60-4171-9269-7be3e358c2f7">
+
 ```
 def square(x: ndarray) -> ndarray:
     '''
@@ -42,11 +45,32 @@ def leaky_relu(x: ndarray) -> ndarray:
 
 ### Derivatives
 
-- Derivative of a function at a point is the “rate of change” of the output of the function with respect to its input at that point.
+- Derivative of a function at a point is the **“rate of change”** of the output of the function with respect to its input at that point.
 
 Example:</br>
 
 $\frac{\mathrm{d} f}{\mathrm{d} x}(x) = \displaystyle \lim_{a \to 0}\frac{f(x+a)-f(x-a)}{2*a}$
+
+This limit i.e "a" can be approximated numerically by setting a very small value for a, such as 0.001, so we can compute the derivative.
+
+<img width="655" alt="derivative_slope" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/87148696-0165-4147-a807-3de3c5cde9b5">
+<img width="554" alt="derivative_factory" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/e26c41a8-4060-4cea-9640-e9ad1b006466">
+
+```
+from typing import Callable
+
+def deriv(func: Callable[[ndarray], ndarray],
+          input_: ndarray,
+          delta: float = 0.001) -> ndarray:
+    '''
+    Evaluates the derivative of a function "func" at every element in the
+    "input_" array.
+    '''
+    return (func(input_ + delta) - func(input_ - delta)) / (2 * delta)
+```
+
+### Nested Functions
+
 
 
 ## Topic 1: Fundamentals of Deep Learning

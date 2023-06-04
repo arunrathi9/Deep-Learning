@@ -297,6 +297,21 @@ def matrix_forward_extra(X: ndarray,
 
 ## Topic 2: Fundamentals of Deep Learning
 
+### Supervised Learning Overview:
+
+Supervised Learning can be described as the subset of machine learning dedicated to finding relationships between characteristics of the data that have already been measured.
+
+#### Supervised Learning Models:
+
+- Linear Regression:
+  - Equation: $y_i=\beta _0+\beta _1\times x_1+\beta _2\times x_2+...+\beta _n\times x_n+\epsilon$
+  - the numeric value of each target is a linear combination of the k features of X, plus the β0 term to adjust the “baseline” value of the prediction (specifically, the prediction that will be made when the value of all of the features is 0).
+  - <img width="654" alt="linear_regression_diagram" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/b7c73ad4-aa4d-49bb-8f9c-48e53ac7e2c4">
+  - Traning the Model:
+    - <img width="641" alt="linear_regression_loss_L" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/dd7bbff9-5675-4183-97f6-2aa4e1ce56bb">
+    - Call this Error L, is key: once we have it, we can use all the techniques we saw in Foundation to compute the gradient of this number with respect to each element of W. Then we can use these derivatives to update each element of W in the direction that would cause L to decrease.
+
+### 
 ### Intro
 
 Major Breakthrough for DL - 2012 ImageNet Datasets - DL models won with a huge margin

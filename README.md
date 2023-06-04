@@ -8,8 +8,9 @@ I'm using this repo to consolidate all my learning about Deep learning
 ## 📇 Content:
 
 1. Foundation
-2. Neural Networks
-3. Artifical NN
+2. Fundamentals
+3. Neural Networks
+4. Artifical NN
 
 ## Topic 1: Foundation (covering useful Math concepts)
 
@@ -225,7 +226,7 @@ Example of Housing price:<br>
    - x1, x2, and so on are numerical features of a house, such as its square footage or its proximity to schools.
 - Creating New Features from Existing Features:
   - single most common operation in neural networks is to form a “weighted sum” of these features, where the weighted sum could emphasize certain features and de-emphasize others and thus be thought of as a new feature that itself is just a combination of old features.
-  - weight vector: $$w = \begin{bmatrix}w_1\\w_2\\.\\.\\w_n\end{bmatrix}$$
+  - weight vector: $w = \begin{bmatrix}w_1\\w_2\\.\\.\\w_n\end{bmatrix}$
   - Dot product of W and variable (X) vectors: $N = \upsilon (X, W)=X\times W =x_1\times w_1+x_2\times w_2+x_3\times w_3+...$
 
 <img width="698" alt="matrix_multiplication" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/d48aa8a2-cf3c-4487-9e28-52448a75fe48">
@@ -252,7 +253,49 @@ def matmul_forward(X: ndarray,
 ### Derivatives of Functions with Multiple Vector Inputs:
 
 
-## Topic 1: Fundamentals of Deep Learning
+Derivatives were straightforward with addition and multiplication, but how do we handle matrix multiplication? To precisely define this, we need to delve into the maths.
+
+- Math:
+  - “the derivative with respect to a matrix” really means “the derivative with respect to each element of the matrix.
+  - <img width="645" alt="vector_der_formula" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/f4c16dbd-262b-4407-acde-2274db802528">
+  - <img width="625" alt="vector_der_formula2" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/d55f90e5-202b-4f61-b842-599a48a33c29">
+
+- Code:
+```
+def matmul_backward_first(X: ndarray,
+                          W: ndarray) -> ndarray:
+    
+    #Computes the backward pass of a matrix multiplication with respect to the first argument.
+
+    # backward pass
+    dNdX = np.transpose(W, (1, 0))
+
+    return dNdX
+```
+
+### Vector Functions and Their Derivatives: One Step Further
+
+<img width="648" alt="nested_vector_functions" src="https://github.com/arunrathi9/Deep-Learning/assets/27626791/719c0989-557a-4d6d-9013-03c8dc19fcd3">
+
+```
+def matrix_forward_extra(X: ndarray,
+                         W: ndarray,
+                         sigma: Array_Function) -> ndarray:
+    
+    #Computes the forward pass of a function involving matrix multiplication, one extra function.
+
+    assert X.shape[1] == W.shape[0]
+
+    # matrix multiplication
+    N = np.dot(X, W)
+
+    # feeding the output of the matrix multiplication through sigma
+    S = sigma(N)
+
+    return S
+```
+
+## Topic 2: Fundamentals of Deep Learning
 
 ### Intro
 

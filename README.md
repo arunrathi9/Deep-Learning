@@ -7,19 +7,22 @@ I'm using this repo to consolidate all my learning about Deep learning
 
 ## 📇 Content:
 
-1. Foundation
-2. Fundamentals
-3. Neural Networks
-4. Artifical NN
+1. [Foundation](#item-one)
+  - [Functions](#item-b)
+3. Fundamentals
+4. Neural Networks
+5. Artifical NN
 
-## Topic 1: Foundation (covering useful Math concepts)
+<a id="item-one"></a>
+## Topic 1: Foundation
 
-For every function & Derivatives, I will cover below parts as:
+In this topic, I'm covering covering useful Math concepts. For every function & Derivatives, I will cover below parts as:
  - Math formula
  - Diagram (x-y) plane
  - Mini-factories diagram
  - Code
 
+<a id="item-b"></a>
 ### Functions
 
 **Math**
